@@ -18,7 +18,8 @@
     "test:watch": "ng test",
     "test:ci": "ng test --watch=false --code-coverage --no-progress --browsers=ChromeHeadlessCustom",
     "lint": "ng lint",
-    "lint:fix": "ng lint --fix"
+    "lint:fix": "ng lint --fix",
+    "tsc-verify": "tsc --noEmit"
   },
   "private": true,
   "devDependencies": {
