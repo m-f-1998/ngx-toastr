@@ -69,6 +69,11 @@ export class ToastNoAnimation implements OnDestroy {
   /** width of progress bar */
   width = signal(-1);
 
+  /** display style for host binding */
+  get displayStyle ( ): string {
+    return this.state ( ) === 'removed' ? 'none' : '';
+  }
+
   /** controls animation */
   state = signal('inactive');
   private timeout: any;
