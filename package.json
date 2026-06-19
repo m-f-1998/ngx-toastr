@@ -43,6 +43,7 @@
     "bootstrap": "5.3.8",
     "cpy-cli": "7.0.0",
     "eslint": "10.5.0",
+    "istanbul-lib-instrument": "^6.0.3",
     "jasmine-core": "6.3.0",
     "jasmine-spec-reporter": "7.0.0",
     "karma": "6.4.4",

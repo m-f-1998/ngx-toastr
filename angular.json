@@ -29,7 +29,7 @@
             "scripts": [],
             "stylePreprocessorOptions": {
               "sass": {
-                "silenceDeprecations": ["color-functions", "global-builtin", "import"]
+                "silenceDeprecations": ["mixed-decls", "color-functions", "global-builtin", "import"]
               }
             }
           },
@@ -66,6 +66,11 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "stylePreprocessorOptions": {
+              "sass": {
+                "silenceDeprecations": ["color-functions", "global-builtin", "import"]
+              }
+            },
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
