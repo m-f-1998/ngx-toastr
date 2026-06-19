@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { ApplicationRef, ComponentFactoryResolver, inject, Injectable } from '@angular/core';
+import { ApplicationRef, EnvironmentInjector, inject, Injectable } from '@angular/core';
 
 import { DomPortalHost } from '../portal/dom-portal-host';
 import { ToastContainerDirective } from '../toastr/toast.directive';
@@ -17,9 +17,9 @@ import { OverlayRef } from './overlay-ref';
 @Injectable({ providedIn: 'root' })
 export class Overlay {
   private _overlayContainer = inject(OverlayContainer);
-  private _componentFactoryResolver = inject(ComponentFactoryResolver);
   private _appRef = inject(ApplicationRef);
   private _document = inject(DOCUMENT);
+  private _environmentInjector = inject(EnvironmentInjector);
 
   // Namespace panes by overlay container
   private _paneElements: Map<ToastContainerDirective, Record<string, HTMLElement>> = new Map();
@@ -79,7 +79,7 @@ export class Overlay {
    * @returns A portal host for the given DOM element.
    */
   private _createPortalHost(pane: HTMLElement): DomPortalHost {
-    return new DomPortalHost(pane, this._componentFactoryResolver, this._appRef);
+    return new DomPortalHost(pane, this._environmentInjector, this._appRef);
   }
 
   /**

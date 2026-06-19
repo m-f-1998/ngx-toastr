@@ -1,6 +1,7 @@
 import {
   ApplicationRef,
-  ComponentFactoryResolver,
+  createComponent,
+  EnvironmentInjector,
   ComponentRef,
   EmbeddedViewRef,
 } from '@angular/core';
@@ -15,7 +16,7 @@ import { BasePortalHost, ComponentPortal } from './portal';
 export class DomPortalHost extends BasePortalHost {
   constructor(
     private _hostDomElement: Element,
-    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _environmentInjector: EnvironmentInjector,
     private _appRef: ApplicationRef,
   ) {
     super();
@@ -29,17 +30,10 @@ export class DomPortalHost extends BasePortalHost {
     portal: ComponentPortal<T>,
     newestOnTop: boolean,
   ): ComponentRef<T> {
-    const componentFactory = this._componentFactoryResolver.resolveComponentFactory(
-      portal.component,
-    );
-    let componentRef: ComponentRef<T>;
-
-    // If the portal specifies a ViewContainerRef, we will use that as the attachment point
-    // for the component (in terms of Angular's component tree, not rendering).
-    // When the ViewContainerRef is missing, we use the factory to create the component directly
-    // and then manually attach the ChangeDetector for that component to the application (which
-    // happens automatically when using a ViewContainer).
-    componentRef = componentFactory.create(portal.injector);
+    const componentRef = createComponent(portal.component, {
+      environmentInjector: this._environmentInjector,
+      elementInjector: portal.injector,
+    });
 
     // When creating a component outside of a ViewContainer, we need to manually register
     // its ChangeDetector with the application. This API is unfortunately not yet published
