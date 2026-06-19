@@ -27,7 +27,7 @@
     "@angular-eslint/eslint-plugin": "21.1.0",
     "@angular-eslint/eslint-plugin-template": "21.1.0",
     "@angular-eslint/template-parser": "21.1.0",
-    "@angular/build": "^21.0.3",
+    "@angular/build": "^21.2.16",
     "@angular/cli": "21.0.3",
     "@angular/common": "21.0.5",
     "@angular/compiler": "21.0.5",
@@ -67,5 +67,8 @@
     "branches": [
       "master"
     ]
+  },
+  "volta": {
+    "node": "24.17.0"
   }
 }
