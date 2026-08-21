@@ -1,0 +1,47 @@
+{
+  "name": "@m-f-1998/ngx-toastr",
+  "version": "3.0.0",
+  "peerDependencies": {
+    "@angular/core": ">=20.0.0-0",
+    "@angular/common": ">=20.0.0-0",
+    "@angular/platform-browser": ">=20.0.0-0"
+  },
+  "exports": {
+    "./toastr": {
+      "default": "./toastr.css"
+    },
+    "./toastr-bs-alert": {
+      "default": "./toastr-bs-alert.scss"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-f-1998/ngx-toastr.git"
+  },
+  "author": "Matthew Frankland",
+  "license": "MIT",
+  "description": "Toastr for Angular",
+  "keywords": [
+    "ng2",
+    "ngx",
+    "ngx-toastr",
+    "toastr-ng2",
+    "angular",
+    "angular2",
+    "typescript",
+    "alert",
+    "toast",
+    "toastr",
+    "angular toastr",
+    "notifications"
+  ],
+  "ng-update": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ]
+  }
+}
