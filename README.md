@@ -49,7 +49,7 @@ npm install @m-f-1998/ngx-toastr
 **Option A — import in global styles (recommended)**
 
 ```scss
-// Default toast styles
+// Default toast styles — use the package export path, not node_modules/
 @import "@m-f-1998/ngx-toastr/toastr";
 
 // Optional: Bootstrap alert-style toast (SASS only)
@@ -69,12 +69,14 @@ npm install @m-f-1998/ngx-toastr
 ]
 ```
 
-Published style exports:
+Published style exports (files ship at the package root):
 
-| Import path | File |
-| ----------- | ---- |
-| `@m-f-1998/ngx-toastr/toastr` | Default toast CSS |
-| `@m-f-1998/ngx-toastr/toastr-bs-alert` | Bootstrap 5 alert-style SCSS |
+| Import path | Resolves to |
+| ----------- | ----------- |
+| `@m-f-1998/ngx-toastr/toastr` | `toastr.css` |
+| `@m-f-1998/ngx-toastr/toastr.css` | `toastr.css` |
+| `@m-f-1998/ngx-toastr/toastr-bs-alert` | `toastr-bs-alert.scss` |
+| `@m-f-1998/ngx-toastr/toastr-bs-alert.scss` | `toastr-bs-alert.scss` |
 
 ### Step 2: Add providers
 

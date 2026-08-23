@@ -1,6 +1,13 @@
 # Changelog
 
-## 3.0.0
+## 4.0.1
+
+### Fixes
+
+- Style assets (`toastr.css`, `toastr-bs-alert.scss`) now ship at the package root so `node_modules/@m-f-1998/ngx-toastr/toastr.css` and package export paths resolve correctly
+- Added explicit `./toastr.css` and `./toastr-bs-alert.scss` export entries
+
+## 4.0.0
 
 ### Breaking changes
 

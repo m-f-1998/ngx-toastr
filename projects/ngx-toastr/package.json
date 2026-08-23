@@ -10,7 +10,13 @@
     "./toastr": {
       "default": "./toastr.css"
     },
+    "./toastr.css": {
+      "default": "./toastr.css"
+    },
     "./toastr-bs-alert": {
+      "default": "./toastr-bs-alert.scss"
+    },
+    "./toastr-bs-alert.scss": {
       "default": "./toastr-bs-alert.scss"
     }
   },
