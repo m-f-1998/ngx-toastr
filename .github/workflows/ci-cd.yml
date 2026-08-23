@@ -94,18 +94,18 @@ jobs:
 
       - name: Setup Pages
         if: steps.check-demo-changes.outputs.demo-changed == 'true'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6.0.0
 
       - name: Upload artifact
         if: steps.check-demo-changes.outputs.demo-changed == 'true'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: ./dist-demo/browser
 
       - name: Deploy to GitHub Pages
         if: steps.check-demo-changes.outputs.demo-changed == 'true'
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5.0.0
 
   # Build and publish to NPM - only on master push when library files change or manual dispatch
   publish-npm:
